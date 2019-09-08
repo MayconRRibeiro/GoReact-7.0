@@ -1,9 +1,10 @@
 import React from "react";
 
 import "./App.css";
+import personImage from "./assets/person-flat-128x128.png";
 
 function App() {
-  return <h1>Hello RocketSeat</h1>;
+  return <img src={personImage} />;
 }
 
 export default App;
