@@ -1,10 +1,10 @@
 import React from "react";
-
 import "./App.css";
-import personImage from "./assets/person-flat-128x128.png";
+
+import TechList from "./components/TechList";
 
 function App() {
-  return <img src={personImage} />;
+  return <TechList />;
 }
 
 export default App;
