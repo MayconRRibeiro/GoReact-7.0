@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 
+import TechItem from "./TechItem";
+
 class TechList extends Component {
   state = {
     newTech: "",
@@ -31,20 +33,11 @@ class TechList extends Component {
       <form onSubmit={this.handleSubmit}>
         <ul>
           {this.state.techs.map(tech => (
-            <li key={tech}>
-              {tech}
-              {/* 
-                Não pode ser definido somente this.handleDelete(tech) pois precisamos
-                passar uma tecnología como parâmetro e se passarmos a função com "()" ao
-                invés de passarmos a função no evento onClick, estamos chamando a função
-                nesse ponto. Por isso deve ser definido "() => this.method()" para que
-                a função seja executada somente na hora de clicar. Referênciamos que 
-                estamos criando a função e não chamando ela.
-              */}
-              <button onClick={() => this.handleDelete(tech)} type="button">
-                Remover
-              </button>
-            </li>
+            <TechItem
+              key={tech}
+              tech={tech}
+              onDelete={() => this.handleDelete(tech)}
+            />
           ))}
         </ul>
         <input
